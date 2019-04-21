@@ -11,6 +11,7 @@
 
     <artifactId>sk-common</artifactId>
 
+
     <!--属性-->
     <properties>
         <!--<lombok.version>1.18.6</lombok.version>-->

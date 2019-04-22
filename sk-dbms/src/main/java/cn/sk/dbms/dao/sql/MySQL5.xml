@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <database name="Oracle">
-	<!--<driver>com.mysql.cj.jdbc.Driver</driver>-->
-	<driver>com.mysql.jdbc.Driver</driver>
+	<driver>com.mysql.cj.jdbc.Driver</driver>
+	<!--<driver>com.mysql.jdbc.Driver</driver>-->
 	<url>jdbc:mysql://%s:%d/%s</url>
 	<select name="query_table" t="缺少tablespace" >
 		<![CDATA[ 

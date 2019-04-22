@@ -17,6 +17,7 @@ import org.beetl.core.Template;
 import org.beetl.core.resource.ClasspathResourceLoader;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -58,6 +59,11 @@ public class GenerateServiceImpl implements GenerateService {
 	public static final String SERVICE_IMPL_SUFFIX = "ServiceImpl.java";
 	public static final String CONTROLLER_SUFFIX = "Controller.java";
 	public static final String VIEW_SUFFIX = ".vue";
+
+	@Value("${beetl.templatesPath}")
+	public String templatesPath;
+
+
 	
 	
 	@Autowired
@@ -129,7 +135,7 @@ public class GenerateServiceImpl implements GenerateService {
 			outPutFolderPath = System.getProperty("user.dir") + "/src/main/java";
 			generateModel.setOutPutFolderPath(outPutFolderPath);
 		}
-		ClasspathResourceLoader resourceLoader = new ClasspathResourceLoader("templates");
+		ClasspathResourceLoader resourceLoader = new ClasspathResourceLoader(templatesPath);
 		Configuration configuration = Configuration.defaultConfiguration();
 		GroupTemplate groupTemplate = new GroupTemplate(resourceLoader, configuration);
 		for(TableModel tableModel:generateModel.getTableModels()) {

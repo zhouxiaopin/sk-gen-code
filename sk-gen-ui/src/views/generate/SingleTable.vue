@@ -63,7 +63,7 @@
                  size="small">
           <span>
             <el-form-item label="包名">
-              <el-input v-model="generateModel.basePackage" placeholder="如：com.louis.kitty">
+              <el-input v-model="generateModel.basePackage" placeholder="如：cn.sk">
                 <el-button type="file" slot="append" icon="fa fa-folder fa-lg" @click="chooseBasePackage"></el-button>
               </el-input>
             </el-form-item>
@@ -184,7 +184,7 @@
           if (res.code == 200) {
             this.generateModel = res.data
             this.treeData = this.generateModel.tableModels
-            this.generateModel.outPutFolderPath = 'C:\\sk-gen-code'
+            this.generateModel.outPutFolderPath = 'C:\\Users\\Administrator\\Desktop\\output'
             this.disabledGenerateBtn = false
           } else {
             this.$message({ message: res.msg, type: "error" })
@@ -202,7 +202,7 @@
       },
       // 选择代码输出目录
       chooseOutputFolder() {
-        this.generateModel.outPutFolderPath = 'C:\\sk-gen-code\\output'
+        this.generateModel.outPutFolderPath = 'C:\\Users\\Administrator\\Desktop\\output'
       },
       // 生成代码
       generateCode() {

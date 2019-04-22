@@ -184,7 +184,7 @@
           if (res.code == 200) {
             this.generateModel = res.data
             this.treeData = this.generateModel.tableModels
-            this.generateModel.outPutFolderPath = 'C:\\kitty'
+            this.generateModel.outPutFolderPath = 'C:\\sk-gen-code'
             this.disabledGenerateBtn = false
           } else {
             this.$message({ message: res.msg, type: "error" })
@@ -198,11 +198,11 @@
       },
       // 选择代码输出目录
       chooseBasePackage() {
-        this.generateModel.basePackage = 'com.louis.kitty'
+        this.generateModel.basePackage = 'cn.sk'
       },
       // 选择代码输出目录
       chooseOutputFolder() {
-        this.generateModel.outPutFolderPath = 'C:\\kitty\\output'
+        this.generateModel.outPutFolderPath = 'C:\\sk-gen-code\\output'
       },
       // 生成代码
       generateCode() {
